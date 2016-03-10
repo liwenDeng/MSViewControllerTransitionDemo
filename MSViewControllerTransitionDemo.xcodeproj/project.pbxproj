@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		BC4556C21C8FC7ED00467591 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556C11C8FC7ED00467591 /* main.m */; };
 		BC4556C51C8FC7ED00467591 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556C41C8FC7ED00467591 /* AppDelegate.m */; };
-		BC4556C81C8FC7ED00467591 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556C71C8FC7ED00467591 /* ViewController.m */; };
 		BC4556CB1C8FC7ED00467591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4556C91C8FC7ED00467591 /* Main.storyboard */; };
 		BC4556CD1C8FC7ED00467591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4556CC1C8FC7ED00467591 /* Assets.xcassets */; };
 		BC4556D01C8FC7ED00467591 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4556CE1C8FC7ED00467591 /* LaunchScreen.storyboard */; };
 		BC4556DB1C8FC7ED00467591 /* MSViewControllerTransitionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556DA1C8FC7ED00467591 /* MSViewControllerTransitionDemoTests.m */; };
 		BC4556E61C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556E51C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests.m */; };
+		BC4556F91C91190F00467591 /* MSAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556F81C91190F00467591 /* MSAnimationViewController.m */; };
+		BC4556FC1C911B8600467591 /* MSSlideTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556FB1C911B8600467591 /* MSSlideTabBarViewController.m */; };
+		BC4556FF1C911F0500467591 /* MSTabBarVCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556FE1C911F0500467591 /* MSTabBarVCDelegate.m */; };
+		BC4557021C9132AD00467591 /* MSSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4557011C9132AD00467591 /* MSSlideAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 		BC4556C11C8FC7ED00467591 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC4556C31C8FC7ED00467591 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC4556C41C8FC7ED00467591 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BC4556C61C8FC7ED00467591 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BC4556C71C8FC7ED00467591 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BC4556CA1C8FC7ED00467591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC4556CC1C8FC7ED00467591 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC4556CF1C8FC7ED00467591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,14 @@
 		BC4556E11C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSViewControllerTransitionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4556E51C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewControllerTransitionDemoUITests.m; sourceTree = "<group>"; };
 		BC4556E71C8FC7ED00467591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4556F71C91190F00467591 /* MSAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAnimationViewController.h; sourceTree = "<group>"; };
+		BC4556F81C91190F00467591 /* MSAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAnimationViewController.m; sourceTree = "<group>"; };
+		BC4556FA1C911B8600467591 /* MSSlideTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSlideTabBarViewController.h; sourceTree = "<group>"; };
+		BC4556FB1C911B8600467591 /* MSSlideTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSlideTabBarViewController.m; sourceTree = "<group>"; };
+		BC4556FD1C911F0500467591 /* MSTabBarVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBarVCDelegate.h; sourceTree = "<group>"; };
+		BC4556FE1C911F0500467591 /* MSTabBarVCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBarVCDelegate.m; sourceTree = "<group>"; };
+		BC4557001C9132AD00467591 /* MSSlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSlideAnimationController.h; sourceTree = "<group>"; };
+		BC4557011C9132AD00467591 /* MSSlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSlideAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 		BC4556B41C8FC7ED00467591 = {
 			isa = PBXGroup;
 			children = (
+				BC4556F31C91184000467591 /* MSTransitionViewController */,
 				BC4556BF1C8FC7ED00467591 /* MSViewControllerTransitionDemo */,
 				BC4556D91C8FC7ED00467591 /* MSViewControllerTransitionDemoTests */,
 				BC4556E41C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests */,
@@ -103,8 +113,8 @@
 			children = (
 				BC4556C31C8FC7ED00467591 /* AppDelegate.h */,
 				BC4556C41C8FC7ED00467591 /* AppDelegate.m */,
-				BC4556C61C8FC7ED00467591 /* ViewController.h */,
-				BC4556C71C8FC7ED00467591 /* ViewController.m */,
+				BC4556F71C91190F00467591 /* MSAnimationViewController.h */,
+				BC4556F81C91190F00467591 /* MSAnimationViewController.m */,
 				BC4556C91C8FC7ED00467591 /* Main.storyboard */,
 				BC4556CC1C8FC7ED00467591 /* Assets.xcassets */,
 				BC4556CE1C8FC7ED00467591 /* LaunchScreen.storyboard */,
@@ -138,6 +148,19 @@
 				BC4556E71C8FC7ED00467591 /* Info.plist */,
 			);
 			path = MSViewControllerTransitionDemoUITests;
+			sourceTree = "<group>";
+		};
+		BC4556F31C91184000467591 /* MSTransitionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC4556FA1C911B8600467591 /* MSSlideTabBarViewController.h */,
+				BC4556FB1C911B8600467591 /* MSSlideTabBarViewController.m */,
+				BC4556FD1C911F0500467591 /* MSTabBarVCDelegate.h */,
+				BC4556FE1C911F0500467591 /* MSTabBarVCDelegate.m */,
+				BC4557001C9132AD00467591 /* MSSlideAnimationController.h */,
+				BC4557011C9132AD00467591 /* MSSlideAnimationController.m */,
+			);
+			name = MSTransitionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC4556C81C8FC7ED00467591 /* ViewController.m in Sources */,
+				BC4556F91C91190F00467591 /* MSAnimationViewController.m in Sources */,
 				BC4556C51C8FC7ED00467591 /* AppDelegate.m in Sources */,
 				BC4556C21C8FC7ED00467591 /* main.m in Sources */,
+				BC4557021C9132AD00467591 /* MSSlideAnimationController.m in Sources */,
+				BC4556FC1C911B8600467591 /* MSSlideTabBarViewController.m in Sources */,
+				BC4556FF1C911F0500467591 /* MSTabBarVCDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +522,7 @@
 				BC4556EC1C8FC7ED00467591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC4556ED1C8FC7ED00467591 /* Build configuration list for PBXNativeTarget "MSViewControllerTransitionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +531,7 @@
 				BC4556EF1C8FC7ED00467591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC4556F01C8FC7ED00467591 /* Build configuration list for PBXNativeTarget "MSViewControllerTransitionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +540,7 @@
 				BC4556F21C8FC7ED00467591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
