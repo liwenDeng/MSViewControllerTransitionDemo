@@ -11,13 +11,15 @@
 
 @interface MSTabBarVCDelegate ()
 
+@property (nonatomic, strong)MSSlideAnimationController* animationControll;
+
 @end
 
 @implementation MSTabBarVCDelegate
 
 - (instancetype)init {
     if (self = [super init]) {
-        _interactionController = [[UIPercentDrivenInteractiveTransition alloc]init];
+        _animationControll = [[MSSlideAnimationController alloc]init];
     }
     return self;
 }
@@ -38,8 +40,30 @@
     MSTabOperationDirection direction = fromIndex > toIndex ? MSTabOperationDirectionLeft : MSTabOperationDirectionRight;
     
     // 创建对应的转场动画
-    MSSlideAnimationController *slideAnimationController = [[MSSlideAnimationController alloc]initWithTransitionType:(MSTabTransition) direction:(direction)];
+//    MSSlideAnimationController *slideAnimationController = [[MSSlideAnimationController alloc]initWithTransitionType:(MSTabTransition) direction:(direction)];
+    _animationControll.direction = direction;
+    _animationControll.transitionType = MSTabTransition;
     
-    return slideAnimationController;
+    NSLog(@"变化没");
+    
+    return _animationControll;
 }
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    NSLog(@"询问是否应该选中");
+    return YES;
+}
+//
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"确定选中");
+}
+
+#pragma mark -LazyProerty
+- (UIPercentDrivenInteractiveTransition *)interactionController {
+    if (!_interactionController) {
+        _interactionController = [[UIPercentDrivenInteractiveTransition alloc]init];
+    }
+    return _interactionController;
+}
+
 @end

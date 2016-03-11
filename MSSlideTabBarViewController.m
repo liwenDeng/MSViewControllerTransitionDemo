@@ -51,12 +51,12 @@
             self.tabBarVCDelegate.interactive = YES;//启用手势交互
             if (direction < 0) {
                 //左滑 向右翻页
-                NSLog(@"zuo");
+//                NSLog(@"zuo");
                 if (self.selectedIndex < self.viewControllers.count - 1) {
                     self.selectedIndex += 1;
                 }
             }else {
-                NSLog(@"you");
+//                NSLog(@"you");
                 //右滑 向左翻页
                 if (self.selectedIndex > 0) {
                     self.selectedIndex -= 1;
@@ -66,7 +66,7 @@
             break;
         case UIGestureRecognizerStateChanged:
         {
-            NSLog(@"progress:%lf",progress);
+//            NSLog(@"progress:%lf",progress);
             [self.tabBarVCDelegate.interactionController updateInteractiveTransition:progress];
         }
             break;
@@ -74,10 +74,12 @@
         case UIGestureRecognizerStateEnded:
         {
             
-            if (progress > 0.3) {
+            if (progress > 0.5) {
+                self.tabBarVCDelegate.interactionController.completionSpeed = (1 - progress);// * self.tabBarVCDelegate.interactionController.duration ;
                 [self.tabBarVCDelegate.interactionController finishInteractiveTransition];
             }else {
                 //取消转场后，UITabBarController会自动恢复selectedIndex的值,不需要手动恢复
+                self.tabBarVCDelegate.interactionController.completionSpeed = (1 - progress); //* self.tabBarVCDelegate.interactionController.duration;
                 [self.tabBarVCDelegate.interactionController cancelInteractiveTransition];
             }
             self.tabBarVCDelegate.interactive = NO;

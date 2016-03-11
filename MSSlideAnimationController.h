@@ -53,4 +53,10 @@ typedef NS_ENUM(NSUInteger, MSModalOperation) {
  */
 - (instancetype)initWithTransitionType:(MSTransitionType)transitionType direction:(MSTabOperationDirection)direction;
 
+/**
+ *  转场类型
+ */
+@property (nonatomic, assign) MSTransitionType transitionType;
+@property (nonatomic, assign) MSTabOperationDirection direction;
+
 @end

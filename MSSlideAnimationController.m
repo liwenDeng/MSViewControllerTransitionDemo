@@ -12,11 +12,7 @@
 
 @interface MSSlideAnimationController ()
 
-/**
- *  转场类型
- */
-@property (nonatomic, assign) MSTransitionType transitionType;
-@property (nonatomic, assign) MSTabOperationDirection direction;
+
 
 @end
 
@@ -68,6 +64,8 @@
         toView = toVC.view;
     }
 
+    [containerView addSubview:toView];
+    
     CGFloat translation = containerView.frame.size.width;
     CGAffineTransform toViewTransform = CGAffineTransformIdentity;
     CGAffineTransform fromViewTransform = CGAffineTransformIdentity;
@@ -84,9 +82,6 @@
             translation = self.direction == MSTabOperationDirectionLeft ? translation : -translation;
             fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
-            
-            //###必须加上这句代码！！！ 否则toView不会显示
-            [containerView addSubview:toView];
         }
             break;
         case MSModalTransition:
@@ -97,23 +92,30 @@
         default:
             break;
     }
-    NSLog(@"执行动画");
+//    NSLog(@"执行动画");
     toView.transform = toViewTransform;
     
     [UIView animateWithDuration:0.5 animations:^{
-//        fromView.transform = fromViewTransform;
-//        toView.transform = CGAffineTransformIdentity;
+        fromView.transform = fromViewTransform;
+        toView.transform = CGAffineTransformIdentity;
+        [transitionContext updateInteractiveTransition:1];
 //        NSLog(@"动画进行了");
     } completion:^(BOOL finished) {
         //转场结束后视图恢复到初状态
         fromView.transform = CGAffineTransformIdentity;
         toView.transform = CGAffineTransformIdentity;
+        //###必须加上这句代码！！！ 否则toView不会显示
         //2. 必须告诉动画控制器转场是否完成
         BOOL isCancelled = [transitionContext transitionWasCancelled];
+        if (isCancelled) {
+            [toView removeFromSuperview];
+        }else {
+            [fromView removeFromSuperview];
+        }
         [transitionContext completeTransition:!isCancelled];
     }];
     
-    
+
 
 }
 
@@ -131,6 +133,8 @@
 - (void)animationEnded:(BOOL)transitionCompleted {
     if (transitionCompleted) {
        NSLog(@"finished");
+    }else {
+        NSLog(@"not finished");
     }
 }
 @end

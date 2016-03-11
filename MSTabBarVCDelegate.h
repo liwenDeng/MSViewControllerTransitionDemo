@@ -22,6 +22,6 @@
 /**
  *  交互式转场控制器
  */
-@property (nonatomic,strong) UIPercentDrivenInteractiveTransition*interactionController;
+@property (nonatomic,strong) UIPercentDrivenInteractiveTransition* interactionController;
 
 @end
