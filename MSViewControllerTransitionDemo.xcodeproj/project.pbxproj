@@ -18,6 +18,10 @@
 		BC4556FC1C911B8600467591 /* MSSlideTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556FB1C911B8600467591 /* MSSlideTabBarViewController.m */; };
 		BC4556FF1C911F0500467591 /* MSTabBarVCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4556FE1C911F0500467591 /* MSTabBarVCDelegate.m */; };
 		BC4557021C9132AD00467591 /* MSSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4557011C9132AD00467591 /* MSSlideAnimationController.m */; };
+		BC82B6011C968BA200ACBC96 /* MSNavigationTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82B6001C968BA200ACBC96 /* MSNavigationTransitionVC.m */; };
+		BC82B6041C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82B6031C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.m */; };
+		BC82B6071C968E3200ACBC96 /* MSNavigationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82B6061C968E3200ACBC96 /* MSNavigationAnimationController.m */; };
+		BC82B60A1C96C3D900ACBC96 /* MSPushVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82B6091C96C3D900ACBC96 /* MSPushVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,14 @@
 		BC4556FE1C911F0500467591 /* MSTabBarVCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBarVCDelegate.m; sourceTree = "<group>"; };
 		BC4557001C9132AD00467591 /* MSSlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSlideAnimationController.h; sourceTree = "<group>"; };
 		BC4557011C9132AD00467591 /* MSSlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSlideAnimationController.m; sourceTree = "<group>"; };
+		BC82B5FF1C968BA200ACBC96 /* MSNavigationTransitionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNavigationTransitionVC.h; sourceTree = "<group>"; };
+		BC82B6001C968BA200ACBC96 /* MSNavigationTransitionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNavigationTransitionVC.m; sourceTree = "<group>"; };
+		BC82B6021C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNavigationTransitionVCDelegate.h; sourceTree = "<group>"; };
+		BC82B6031C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNavigationTransitionVCDelegate.m; sourceTree = "<group>"; };
+		BC82B6051C968E3200ACBC96 /* MSNavigationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNavigationAnimationController.h; sourceTree = "<group>"; };
+		BC82B6061C968E3200ACBC96 /* MSNavigationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNavigationAnimationController.m; sourceTree = "<group>"; };
+		BC82B6081C96C3D900ACBC96 /* MSPushVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPushVC.h; sourceTree = "<group>"; };
+		BC82B6091C96C3D900ACBC96 /* MSPushVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPushVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +102,8 @@
 		BC4556B41C8FC7ED00467591 = {
 			isa = PBXGroup;
 			children = (
-				BC4556F31C91184000467591 /* MSTransitionViewController */,
+				BC82B5FE1C968B6F00ACBC96 /* MSNaviTransitionDemo */,
+				BC4556F31C91184000467591 /* MSTabBarTransilationVC */,
 				BC4556BF1C8FC7ED00467591 /* MSViewControllerTransitionDemo */,
 				BC4556D91C8FC7ED00467591 /* MSViewControllerTransitionDemoTests */,
 				BC4556E41C8FC7ED00467591 /* MSViewControllerTransitionDemoUITests */,
@@ -113,6 +126,8 @@
 			children = (
 				BC4556C31C8FC7ED00467591 /* AppDelegate.h */,
 				BC4556C41C8FC7ED00467591 /* AppDelegate.m */,
+				BC82B6081C96C3D900ACBC96 /* MSPushVC.h */,
+				BC82B6091C96C3D900ACBC96 /* MSPushVC.m */,
 				BC4556F71C91190F00467591 /* MSAnimationViewController.h */,
 				BC4556F81C91190F00467591 /* MSAnimationViewController.m */,
 				BC4556C91C8FC7ED00467591 /* Main.storyboard */,
@@ -150,7 +165,7 @@
 			path = MSViewControllerTransitionDemoUITests;
 			sourceTree = "<group>";
 		};
-		BC4556F31C91184000467591 /* MSTransitionViewController */ = {
+		BC4556F31C91184000467591 /* MSTabBarTransilationVC */ = {
 			isa = PBXGroup;
 			children = (
 				BC4556FA1C911B8600467591 /* MSSlideTabBarViewController.h */,
@@ -160,7 +175,20 @@
 				BC4557001C9132AD00467591 /* MSSlideAnimationController.h */,
 				BC4557011C9132AD00467591 /* MSSlideAnimationController.m */,
 			);
-			name = MSTransitionViewController;
+			name = MSTabBarTransilationVC;
+			sourceTree = "<group>";
+		};
+		BC82B5FE1C968B6F00ACBC96 /* MSNaviTransitionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BC82B5FF1C968BA200ACBC96 /* MSNavigationTransitionVC.h */,
+				BC82B6001C968BA200ACBC96 /* MSNavigationTransitionVC.m */,
+				BC82B6021C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.h */,
+				BC82B6031C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.m */,
+				BC82B6051C968E3200ACBC96 /* MSNavigationAnimationController.h */,
+				BC82B6061C968E3200ACBC96 /* MSNavigationAnimationController.m */,
+			);
+			name = MSNaviTransitionDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC82B60A1C96C3D900ACBC96 /* MSPushVC.m in Sources */,
 				BC4556F91C91190F00467591 /* MSAnimationViewController.m in Sources */,
 				BC4556C51C8FC7ED00467591 /* AppDelegate.m in Sources */,
 				BC4556C21C8FC7ED00467591 /* main.m in Sources */,
 				BC4557021C9132AD00467591 /* MSSlideAnimationController.m in Sources */,
+				BC82B6041C968C1D00ACBC96 /* MSNavigationTransitionVCDelegate.m in Sources */,
 				BC4556FC1C911B8600467591 /* MSSlideTabBarViewController.m in Sources */,
+				BC82B6071C968E3200ACBC96 /* MSNavigationAnimationController.m in Sources */,
 				BC4556FF1C911F0500467591 /* MSTabBarVCDelegate.m in Sources */,
+				BC82B6011C968BA200ACBC96 /* MSNavigationTransitionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

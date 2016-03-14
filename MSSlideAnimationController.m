@@ -92,7 +92,6 @@
         default:
             break;
     }
-//    NSLog(@"执行动画");
     toView.transform = toViewTransform;
     
     [UIView animateWithDuration:0.5 animations:^{
@@ -114,16 +113,12 @@
         }
         [transitionContext completeTransition:!isCancelled];
     }];
-    
-
-
 }
 
 /**
  *  返回动画时间
  */
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-//        NSLog(@"time:0.5");
     return 0.5;
 }
 

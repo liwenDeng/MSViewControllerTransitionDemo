@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MSAnimationViewController.h"
 #import "MSSlideTabBarViewController.h"
+#import "MSNavigationTransitionVC.h"
+#import "MSPushVC.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   
     
+    // TabBarVC
+//    [self initTabBarVCDemo];
+
+    //NaviVC
+    [self initNaviVCDemo];
+    
+    return YES;
+}
+
+- (void)initTabBarVCDemo {
     MSAnimationViewController *vc1 = [[MSAnimationViewController alloc]init];
     vc1.view.backgroundColor = [UIColor redColor];
     vc1.title = @"vc1";
@@ -36,7 +49,18 @@
     _window.backgroundColor = [UIColor clearColor];
     _window.rootViewController = tabVC;
     [_window makeKeyAndVisible];
-    return YES;
+}
+
+- (void)initNaviVCDemo {
+    
+    MSPushVC *vc = [[MSPushVC alloc]init];
+    MSNavigationTransitionVC *navi = [[MSNavigationTransitionVC alloc]initWithRootViewController:vc];
+    
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor clearColor];
+    _window.rootViewController = navi;
+    [_window makeKeyAndVisible];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
