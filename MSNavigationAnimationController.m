@@ -53,13 +53,11 @@
     toView.transform = toViewTransform;
     
     [containerView addSubview:toView];
-
+    containerView.backgroundColor = [UIColor yellowColor];
     
     [UIView animateWithDuration:0.5 animations:^{
         fromView.transform = fromViewTransform;
         toView.transform = CGAffineTransformIdentity;
-        [transitionContext updateInteractiveTransition:1];
-        //        NSLog(@"动画进行了");
     } completion:^(BOOL finished) {
         //转场结束后视图恢复到初状态
         fromView.transform = CGAffineTransformIdentity;
@@ -70,7 +68,10 @@
         [transitionContext completeTransition:!isCancelled];
     }];
 
-//    
+/*
+    使用下列方式进行动画，无法通过交互控制进度
+ */
+//    [containerView addSubview:toView];
 //    [UIView transitionFromView:fromView toView:toView duration:0.5 options:(animationType) completion:^(BOOL finished) {
 //        BOOL cancled = [transitionContext transitionWasCancelled];
 //        [transitionContext completeTransition:!cancled];

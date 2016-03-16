@@ -30,9 +30,9 @@
     [btn1 setTitle:@"goBack" forState:(UIControlStateNormal)];
     [btn1 addTarget:self action:@selector(goBack) forControlEvents:(UIControlEventTouchUpInside)];
     
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panAction:)];
-    [self.view addGestureRecognizer:pan];
-    self.pan = pan;
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panAction:)];
+//    [self.view addGestureRecognizer:pan];
+//    self.pan = pan;
 }
 
 
@@ -43,61 +43,61 @@
     }
 }
 
-- (void)panAction:(UIPanGestureRecognizer*)sender {
-    CGFloat direction = [sender velocityInView:self.view].x;
-    CGFloat translationX = [sender translationInView:self.view].x;
-    CGFloat translationAbs = translationX > 0 ? translationX : -translationX;
-    CGFloat progress = translationAbs / self.view.frame.size.width ;
-    
-    
-
-    
-    switch (sender.state) {
-        case UIGestureRecognizerStateBegan:
-        {
-            // 需要在这里对naviDelegate赋值，当执行pop操作后，self.navigationController 将变成nil
-            MSNavigationTransitionVC *navi = (MSNavigationTransitionVC*)self.navigationController;
-            MSNavigationTransitionVCDelegate *naviDelegate = (MSNavigationTransitionVCDelegate*)navi.delegate;
-            self.naviDelegate = naviDelegate;
-            
-            navi.naviDelegate.interactive = YES;//启用手势交互
-            if (direction > 0) {
-                [navi popViewControllerAnimated:YES];
-            }else {
-//                MSAnimationViewController *nextVC = [[MSAnimationViewController alloc]init];
-//                if (self.navigationController) {
-//                    [self.navigationController pushViewController:nextVC animated:YES];
-//                }
-                NSLog(@"wrong way!");
-            }
-        }
-            break;
-        case UIGestureRecognizerStateChanged:
-        {
-            NSLog(@"progress:%lf",progress);
-            [self.naviDelegate.interactionController updateInteractiveTransition:progress];
-        }
-            break;
-        case UIGestureRecognizerStateCancelled:
-        case UIGestureRecognizerStateEnded:
-        {
-            
-            if (progress > 0.3) {
-//                navi.naviDelegate.interactionController.completionSpeed = 0.99;// * self.tabBarVCDelegate.interactionController.duration ;
-                [self.naviDelegate.interactionController finishInteractiveTransition];
-            }else {
-                //取消转场后，UITabBarController会自动恢复selectedIndex的值,不需要手动恢复
-//                navi.naviDelegate.interactionController.completionSpeed = 0.99; //* self.tabBarVCDelegate.interactionController.duration;
-                [self.naviDelegate.interactionController cancelInteractiveTransition];
-            }
-            self.naviDelegate.interactive = NO;
-        }
-            break;
-        default:
-            break;
-    }
-    
-}
+//- (void)panAction:(UIPanGestureRecognizer*)sender {
+//    CGFloat direction = [sender velocityInView:self.view].x;
+//    CGFloat translationX = [sender translationInView:self.view].x;
+//    CGFloat translationAbs = translationX > 0 ? translationX : -translationX;
+//    CGFloat progress = translationAbs / self.view.frame.size.width ;
+//    
+//    
+//
+//    
+//    switch (sender.state) {
+//        case UIGestureRecognizerStateBegan:
+//        {
+//            // 需要在这里对naviDelegate赋值，当执行pop操作后，self.navigationController 将变成nil
+//            MSNavigationTransitionVC *navi = (MSNavigationTransitionVC*)self.navigationController;
+//            MSNavigationTransitionVCDelegate *naviDelegate = (MSNavigationTransitionVCDelegate*)navi.delegate;
+//            self.naviDelegate = naviDelegate;
+//            
+//            navi.naviDelegate.interactive = YES;//启用手势交互
+//            if (direction > 0) {
+//                [navi popViewControllerAnimated:YES];
+//            }else {
+////                MSAnimationViewController *nextVC = [[MSAnimationViewController alloc]init];
+////                if (self.navigationController) {
+////                    [self.navigationController pushViewController:nextVC animated:YES];
+////                }
+//                NSLog(@"wrong way!");
+//            }
+//        }
+//            break;
+//        case UIGestureRecognizerStateChanged:
+//        {
+//            NSLog(@"progress:%lf",progress);
+//            [self.naviDelegate.interactionController updateInteractiveTransition:progress];
+//        }
+//            break;
+//        case UIGestureRecognizerStateCancelled:
+//        case UIGestureRecognizerStateEnded:
+//        {
+//            
+//            if (progress > 0.3) {
+////                navi.naviDelegate.interactionController.completionSpeed = 0.99;// * self.tabBarVCDelegate.interactionController.duration ;
+//                [self.naviDelegate.interactionController finishInteractiveTransition];
+//            }else {
+//                //取消转场后，UITabBarController会自动恢复selectedIndex的值,不需要手动恢复
+////                navi.naviDelegate.interactionController.completionSpeed = 0.99; //* self.tabBarVCDelegate.interactionController.duration;
+//                [self.naviDelegate.interactionController cancelInteractiveTransition];
+//            }
+//            self.naviDelegate.interactive = NO;
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

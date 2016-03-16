@@ -11,6 +11,7 @@
 #import "MSSlideTabBarViewController.h"
 #import "MSNavigationTransitionVC.h"
 #import "MSPushVC.h"
+#import "MSModalViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,17 +28,19 @@
 //    [self initTabBarVCDemo];
 
     //NaviVC
-    [self initNaviVCDemo];
+//    [self initNaviVCDemo];
+    
+    [self initModalDemo];
     
     return YES;
 }
 
 - (void)initTabBarVCDemo {
-    MSAnimationViewController *vc1 = [[MSAnimationViewController alloc]init];
+    UIViewController *vc1 = [[UIViewController alloc]init];
     vc1.view.backgroundColor = [UIColor redColor];
     vc1.title = @"vc1";
     
-    MSAnimationViewController *vc2 = [[MSAnimationViewController alloc]init];
+    UIViewController *vc2 = [[UIViewController alloc]init];
     vc2.view.backgroundColor = [UIColor greenColor];
     vc2.title = @"vc2";
     
@@ -61,6 +64,15 @@
     _window.rootViewController = navi;
     [_window makeKeyAndVisible];
     
+}
+
+- (void)initModalDemo {
+    
+    MSModalViewController *vc = [[MSModalViewController alloc]init];
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor clearColor];
+    _window.rootViewController = vc;
+    [_window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

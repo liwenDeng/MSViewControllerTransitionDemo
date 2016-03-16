@@ -17,7 +17,7 @@
     UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
     btn.frame = CGRectMake(20, 80, 140, 20);
     [self.view addSubview:btn];
-    [btn setTitle:@"present" forState:(UIControlStateNormal)];
+    [btn setTitle:@"push" forState:(UIControlStateNormal)];
     [btn addTarget:self action:@selector(clicked) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.view.backgroundColor = [UIColor redColor];

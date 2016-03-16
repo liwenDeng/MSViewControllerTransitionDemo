@@ -97,8 +97,6 @@
     [UIView animateWithDuration:0.5 animations:^{
         fromView.transform = fromViewTransform;
         toView.transform = CGAffineTransformIdentity;
-        [transitionContext updateInteractiveTransition:1];
-//        NSLog(@"动画进行了");
     } completion:^(BOOL finished) {
         //转场结束后视图恢复到初状态
         fromView.transform = CGAffineTransformIdentity;
@@ -106,11 +104,6 @@
         //###必须加上这句代码！！！ 否则toView不会显示
         //2. 必须告诉动画控制器转场是否完成
         BOOL isCancelled = [transitionContext transitionWasCancelled];
-        if (isCancelled) {
-            [toView removeFromSuperview];
-        }else {
-            [fromView removeFromSuperview];
-        }
         [transitionContext completeTransition:!isCancelled];
     }];
 }
